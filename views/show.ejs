@@ -1,0 +1,45 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Page</title>
+    </head>
+    <body>
+        <header>
+            <nav class="show">
+                <a  href="/products">HOME</a>
+                <a  href="/new">CREATE A NEW PRODUCT</a>
+            
+            </nav>
+        </header>
+    
+        <ul class="list">
+            <li id="title"><%=product.name %></li>
+            <li>Description: <%=product.description %></li>
+            <li>Quantity in stock: <%=product.qty%></li>
+            <li> Price: $<%=product.price%></li>
+            <img src="<%=product.img %>" alt="product picture">
+        </ul>
+        <div class="edit">
+
+            <a href="/products/<%= product._id %>/edit"><button type="button" id ="edit-btn" >EDIT</button></a>
+            
+            <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+                 <input id="delete" type="submit" value="DELETE" id="delete-btn">
+            </form>
+            
+            <form method="POST" action="/products/<%= product._id %>/buy">
+                <% if(product.qty <= 0 ){ %>
+                    <button type="hidden"></button>
+                    <h3> OUT OF STOCK</h3>
+                <% } else { %>
+                    <button id= "buy-btn"type="submit">BUY</button>
+                <% } %>
+            </form>
+        
+        </div>
+        
+        </body>
+        </html>
+        
