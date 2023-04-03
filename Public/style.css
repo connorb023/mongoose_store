@@ -1,0 +1,22 @@
+body {
+    background: #1E9600;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF0000, #FFF200, #1E9600);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF0000, #FFF200, #1E9600); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  }
+  h1 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  .products li {
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+  }
+  nav a{
+	color: rgb(242, 242, 242);
+	display: inline-flex;
+	margin: 20px auto;
+    margin-top: 0;
+  }
